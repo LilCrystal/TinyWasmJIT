@@ -18,13 +18,13 @@ jobs:
           sudo pip install --ignore-installed conan
 
       - name: Configure Conan
-        run: conan install .. --output-folder=build --build=missing --settings=build_type=Debug
+        run: conan install ${{ github.workspace }} --output-folder=build --build=missing --settings=build_type=Debug
 
       - name: Configure CMake
-        run: cmake ..
+        run: cmake .
 
       - name: Build project
-        run: cmake .. --build build
+        run: cmake . --build build
 
       - name: Run tests
         working-directory: build
