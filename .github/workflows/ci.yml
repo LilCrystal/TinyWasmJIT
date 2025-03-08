@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y cmake g++ python-pip
+          sudo apt-get install -y cmake g++ python3-pip
           sudo pip install conan
           conan remote add conancenter https://center.conan.io
 
