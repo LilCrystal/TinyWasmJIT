@@ -15,7 +15,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake g++ python3-pip
-          sudo pip install conan
+          sudo pip install --ignore-installed conan
           conan remote add conancenter https://center.conan.io
 
 
