@@ -1,0 +1,13 @@
+[requires]
+gtest/1.15.0
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[layout]
+cmake_layout
+
+[options]
+gtest/*:asan=True  # 启用 ASAN
+boost/*:asan=True
