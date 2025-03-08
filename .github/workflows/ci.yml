@@ -15,7 +15,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake g++ pip
-          sudo pip instal conan
+          sudo pip install conan
 
       - name: Configure Conan
         run: conan install . --output-folder=build --build=missing --settings=build_type=Debug
