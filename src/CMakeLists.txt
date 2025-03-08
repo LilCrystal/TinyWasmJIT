@@ -5,8 +5,6 @@ if(ENABLE_MAIN)
 
     message( STATUS "UTILS_CPP_FILES is as following: ${UTILS_CPP_FILES} ")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /fsanitize=address")
-
     add_library(TestTool ${UTILS_CPP_FILES})
 
     target_include_directories(TestTool PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Utils/)

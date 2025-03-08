@@ -1,0 +1,65 @@
+{
+    "version": 9,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 10
+    },
+    "configurePresets": [
+        {
+            "name": "Base",
+            "displayName": "Base",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+
+        {
+            "name": "Debug",
+            "inherits": "Base",
+            "displayName": "Debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "ENABLE_TESTS": "ON",
+                "ENABLE_COVERAGE": "ON",
+                "ENABLE_WARNINGS": "ON"
+            }
+        },
+
+        {
+            "name": "Release",
+            "inherits": "Base",
+            "displayName": "Release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "ENABLE_WARNINGS": "OFF"
+            }
+        },
+
+        {
+            "name": "Linux-Debug",
+            "inherits": "Debug",
+            "displayName": "Linux-Debug",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_C_FLAGS": "-Wall -Wextra",
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_CXX_FLAGS": "-Wall -Wextra"
+            }
+
+        }
+    ],
+
+    "buildPresets": [
+        {
+            "name": "debug",
+            "configurePreset": "Linux-Debug",
+            "targets": [
+                "all"
+            ]
+        }
+
+    ]
+}
