@@ -34,7 +34,15 @@ int reader()
 
 int main()
 {
-    std::cout << "Hello World!" << std::endl;
+    try
+    {
+        {/* code */}
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+
 
     return 0;
 }

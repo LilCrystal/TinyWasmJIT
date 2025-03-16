@@ -24,6 +24,7 @@ if(ENABLE_MAIN)
 
     add_executable(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/executor.cpp
     )
 
     target_link_libraries (${PROJECT_NAME}
